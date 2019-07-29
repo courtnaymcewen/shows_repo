@@ -35,15 +35,15 @@
             <div class="form-group">
                 <label for="title">Title</label>
                 <input type="text" class="form-control" name="title" id="title" aria-describedby="showTitle"
-                    placeholder="Show Title: {{show.title}}" style="width: 600px">
+                    value="{{show.title}}" style="width: 600px">
             </div>
             <div class="form-group">
                 <label for="network">Network</label>
                 <input type="text" class="form-control d-inline-block m-3" name="network" id="exampleNetwork1"
-                    placeholder="Network:  {{show.network}}" style="width: 200px">
+                    value="{{show.network}}" style="width: 200px">
                 <label for="date">Date</label>
                 <input type="date" class="form-control d-inline-block m-3" name="release_date"
-                    id="InputReleaseDate1" placeholder="Release_Date:  {{show.release_date}}" style="width: 200px">
+                    id="InputReleaseDate1" value="Release_Date:  {{show.release_date}}" style="width: 200px">
             </div>
 
             <div class="form-group">
@@ -51,7 +51,7 @@
                 <textarea class="form-control" name="description" rows="5"></textarea>
             </div>
 
-            <a class="btn btn-primary" href="/show/{{show.id}}/update" role="button">Update</a>
+            <button type="submit" class="btn btn-primary" href="/show/{{show.id}}/update">Update</button>
             <a href="/show/{{show.id}}/destroy" class="ml-5"> Go to Show</a>
     </div>
     </form>

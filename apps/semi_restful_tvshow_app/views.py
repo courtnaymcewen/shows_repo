@@ -8,7 +8,7 @@ def all_shows(request):
     }
     return render(request, "semi_restful_tvshow_app/all_shows.html", context)
 
-def new_show(request):
+def new_show(request):#shows the form
     print ('new_tvshow')
     return render(request, "semi_restful_tvshow_app/new_show.html")
 
@@ -26,7 +26,7 @@ def show_detail(request, show_id):
     }
     return render(request, "semi_restful_tvshow_app/show_detail.html", context)
 
-def create_show(request):
+def create_show(request): #processing behind the scenes adds info to database
     print ('new_tvshow')
     print (f'request:{request}')
     Show.objects.create(title=request.POST['title'], network=request.POST['network'], release_date=request.POST['release_date'], description=request.POST['description'])
@@ -34,8 +34,9 @@ def create_show(request):
     show.save()
     return redirect(f'/show/{show.id}')
 
-def update_show(request, show_id):
+def update_show(request, show_id): #processing behind the scenes adds info to database
     show = Show.objects.get(id=show_id)
+    print ("*************************************", request.POST)
     # print (f'{request.POST["title"]}')
     show.title = request.POST['title']
     show.network = request.POST['network']
